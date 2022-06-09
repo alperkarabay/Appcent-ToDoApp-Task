@@ -7,6 +7,6 @@ todo:
 user:
  base-url: /user
  post-url: /newUser
- get-pass-url: /validateUser
+ validation-url: /validateUser
 
 
