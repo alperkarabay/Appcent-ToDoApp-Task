@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "${todo.base-url}")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
     @Autowired
     private TaskServiceImpl taskService;
