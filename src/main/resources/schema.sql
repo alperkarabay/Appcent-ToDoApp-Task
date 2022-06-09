@@ -1,0 +1,12 @@
+create table TBL_TASKS(
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ task_title VARCHAR(1000) NOT NULL,
+ status VARCHAR(1000) NOT NULL,
+ created_date DATE NOT NULL
+);
+
+create table TBL_USERS(
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ email VARCHAR(1000) NOT NULL,
+ password VARCHAR(1000) NOT NULL
+);

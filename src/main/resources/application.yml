@@ -1,0 +1,12 @@
+todo:
+ base-url: /task
+ post-url: /newTask
+ get-url: /getTasks
+ put-url: /updateTask/{id}
+ delete-url: /deleteTask/{id}
+user:
+ base-url: /user
+ post-url: /newUser
+ get-pass-url: /validateUser
+
+
