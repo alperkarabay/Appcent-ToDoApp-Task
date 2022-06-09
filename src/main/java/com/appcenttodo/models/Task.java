@@ -2,14 +2,21 @@ package com.appcenttodo.models;
 
 
 import com.appcenttodo.enums.TaskStatus;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Entity
 @AllArgsConstructor
@@ -21,7 +28,6 @@ public class Task implements Serializable {
     private static final long serialVersionUID = 1L;
     @NotNull
     @Id
-    //@SequenceGenerator(name= "TASK_SEQUENCE", sequenceName = "TASK_SEQUENCE_ID", initialValue=1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO,generator="native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
@@ -30,8 +36,7 @@ public class Task implements Serializable {
     private String taskTitle;
     @NotNull
     private TaskStatus status;
-    @Column(name = "createdDate")
-    private Date createdDate;
+
 
 
 }
