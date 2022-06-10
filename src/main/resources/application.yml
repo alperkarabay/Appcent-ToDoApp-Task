@@ -8,5 +8,7 @@ user:
  base-url: /user
  post-url: /newUser
  validation-url: /validateUser
-
+log:
+ base-url: /log
+ get-url: /getLogs
 
