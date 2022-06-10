@@ -1,8 +1,11 @@
 package com.appcenttodo.services;
 
-import com.appcenttodo.models.User;
+
+import com.appcenttodo.models.UserDetail;
+
 
 public interface UserService {
-    void register(User user);
-    boolean login(User user);
+    void register(UserDetail user);
+    boolean login(UserDetail user);
+
 }

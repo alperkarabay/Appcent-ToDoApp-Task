@@ -1,18 +1,24 @@
 create table TBL_TASKS(
  id INT AUTO_INCREMENT PRIMARY KEY,
  task_title VARCHAR(1000) NOT NULL,
- status VARCHAR(1000) NOT NULL,
+ status VARCHAR(1000) NOT NULL
 
 );
 
 create table TBL_USERS(
  id INT AUTO_INCREMENT PRIMARY KEY,
- email VARCHAR(1000) NOT NULL,
- password VARCHAR(1000) NOT NULL
+ username VARCHAR(1000) NOT NULL,
+ password VARCHAR(1000) NOT NULL,
+ roles VARCHAR(1000)
 );
 
 create table TBL_LOGS(
     id INT AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(1000) NOT NULL,
     created_date DATE NOT NULL
-)
+);
+
+create table ROLE(
+    roleId INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(5000) NOT NULL
+);
