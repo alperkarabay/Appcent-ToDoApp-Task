@@ -47,6 +47,8 @@ public class TaskController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You have to sign in first");
         if( taskRepo.findById(id).get().getUserId() != userService.getCurrentUserId())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't update this task");
+        if( taskRepo.findById(id)== null)
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid task id");
         taskService.updateTask(id,taskToUpdate);
 
         return ResponseEntity.ok("Task updated successfully");
@@ -58,6 +60,8 @@ public class TaskController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You have to sign in first");
         if(taskRepo.findById(id).get().getUserId()  != userService.getCurrentUserId())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't delete this task");
+        if( taskRepo.findById(id)== null)
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid task id");
         taskService.deleteTask(id);
         return ResponseEntity.ok("Task deleted successfully");
     }
