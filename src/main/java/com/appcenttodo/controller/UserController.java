@@ -2,8 +2,8 @@ package com.appcenttodo.controller;
 
 
 
-import com.appcenttodo.models.UserDetail;
-import com.appcenttodo.services.UserServiceImpl;
+import com.appcenttodo.entity.UserDetail;
+import com.appcenttodo.service.UserServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

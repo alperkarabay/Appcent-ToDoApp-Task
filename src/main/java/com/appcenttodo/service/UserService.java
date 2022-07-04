@@ -1,8 +1,7 @@
-package com.appcenttodo.services;
+package com.appcenttodo.service;
 
 
-import com.appcenttodo.models.UserDetail;
-import org.springframework.stereotype.Service;
+import com.appcenttodo.entity.UserDetail;
 
 
 public interface UserService {

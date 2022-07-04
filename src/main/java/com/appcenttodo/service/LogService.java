@@ -1,6 +1,6 @@
-package com.appcenttodo.services;
+package com.appcenttodo.service;
 
-import com.appcenttodo.models.Log;
+import com.appcenttodo.entity.Log;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.appcenttodo.repositories;
+package com.appcenttodo.repository;
 
-import com.appcenttodo.models.Task;
+import com.appcenttodo.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

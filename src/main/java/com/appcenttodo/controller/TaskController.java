@@ -1,10 +1,9 @@
 package com.appcenttodo.controller;
 
-import com.appcenttodo.models.Task;
-import com.appcenttodo.repositories.TaskRepository;
-import com.appcenttodo.services.TaskServiceImpl;
-import  com.appcenttodo.models.UserDetail;
-import com.appcenttodo.services.UserServiceImpl;
+import com.appcenttodo.entity.Task;
+import com.appcenttodo.repository.TaskRepository;
+import com.appcenttodo.service.TaskServiceImpl;
+import com.appcenttodo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class TaskController {
     @Autowired
     private TaskServiceImpl taskService;
     @Autowired
-    private TaskRepository taskRepo;
+    private TaskRepository taskRepository;
     @Autowired
     private UserServiceImpl userService;
 
@@ -45,10 +44,11 @@ public class TaskController {
     public ResponseEntity<String> updateTask(@PathVariable Long id, @RequestBody Task taskToUpdate) throws Exception {
         if(!userService.isUserSignedIn())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You have to sign in first");
-        if( taskRepo.findById(id).get().getUserId() != userService.getCurrentUserId())
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't update this task");
-        if( taskRepo.findById(id)== null)
+        if( taskRepository.findById(id).isEmpty())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid task id");
+        if( taskRepository.findById(id).get().getUserId() != userService.getCurrentUserId())
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't update this task");
+
         taskService.updateTask(id,taskToUpdate);
 
         return ResponseEntity.ok("Task updated successfully");
@@ -58,10 +58,11 @@ public class TaskController {
     public ResponseEntity<String> deleteTask(@PathVariable Long id) throws Exception {
         if(!userService.isUserSignedIn())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You have to sign in first");
-        if(taskRepo.findById(id).get().getUserId()  != userService.getCurrentUserId())
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't delete this task");
-        if( taskRepo.findById(id)== null)
+        if( taskRepository.findById(id).isEmpty())
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid task id");
+        if(taskRepository.findById(id).get().getUserId()  != userService.getCurrentUserId())
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You can't delete this task");
+
         taskService.deleteTask(id);
         return ResponseEntity.ok("Task deleted successfully");
     }

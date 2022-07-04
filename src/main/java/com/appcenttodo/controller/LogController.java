@@ -1,7 +1,7 @@
 package com.appcenttodo.controller;
 
-import com.appcenttodo.models.Log;
-import com.appcenttodo.services.LogServiceImpl;
+import com.appcenttodo.entity.Log;
+import com.appcenttodo.service.LogServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

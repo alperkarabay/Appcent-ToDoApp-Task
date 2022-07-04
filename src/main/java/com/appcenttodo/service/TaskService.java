@@ -1,6 +1,6 @@
-package com.appcenttodo.services;
+package com.appcenttodo.service;
 
-import com.appcenttodo.models.Task;
+import com.appcenttodo.entity.Task;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.appcenttodo.models;
+package com.appcenttodo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

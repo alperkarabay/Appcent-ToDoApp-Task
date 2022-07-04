@@ -1,4 +1,4 @@
-package com.appcenttodo.models;
+package com.appcenttodo.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -7,7 +7,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Set;
 
 @Entity
 @Data

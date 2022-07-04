@@ -1,7 +1,6 @@
-package com.appcenttodo.Converters;
+package com.appcenttodo.converter;
 
 import com.appcenttodo.enums.TaskStatus;
-import com.appcenttodo.models.Task;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

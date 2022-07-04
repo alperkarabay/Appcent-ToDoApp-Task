@@ -1,25 +1,21 @@
 package com.appcenttodo;
 
 import com.appcenttodo.enums.TaskStatus;
-import com.appcenttodo.models.Log;
-import com.appcenttodo.models.Task;
-import com.appcenttodo.models.UserDetail;
-import com.appcenttodo.repositories.LogRepository;
-import com.appcenttodo.repositories.TaskRepository;
-import com.appcenttodo.repositories.UserRepository;
-import com.appcenttodo.services.LogServiceImpl;
-import com.appcenttodo.services.TaskService;
-import com.appcenttodo.services.TaskServiceImpl;
-import com.appcenttodo.services.UserServiceImpl;
+import com.appcenttodo.entity.Log;
+import com.appcenttodo.entity.Task;
+import com.appcenttodo.entity.UserDetail;
+import com.appcenttodo.repository.LogRepository;
+import com.appcenttodo.repository.TaskRepository;
+import com.appcenttodo.repository.UserRepository;
+import com.appcenttodo.service.LogServiceImpl;
+import com.appcenttodo.service.TaskServiceImpl;
+import com.appcenttodo.service.UserServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 

@@ -1,4 +1,4 @@
-package com.appcenttodo.Converters;
+package com.appcenttodo.converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
