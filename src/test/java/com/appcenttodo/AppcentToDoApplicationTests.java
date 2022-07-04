@@ -19,9 +19,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -51,37 +53,59 @@ class TodoAppApplicationTests {
 	private TaskRepository taskRepo;
 	@Mock
 	private UserRepository userRepo;
-
+	@Mock
+	private UserServiceImpl uService;
 	@Test
 	public void testAddTask() throws Exception {
 
 	}
 	@Test
-	public void testGetAllTasks() {
+	public void testGetTaks() {
+
 		Task todoTest = new Task();
 		todoTest.setTaskTitle("test-name");
 		todoTest.setStatus(TaskStatus.TO_DO);
+		todoTest.setUserId(1);
 		todoTest.setId(1);
+		Task todoTest2 = new Task();
+		todoTest2.setTaskTitle("test-name 2");
+		todoTest2.setStatus(TaskStatus.TO_DO);
+		todoTest2.setUserId(2);
+		todoTest2.setId(2);
+		List<Task> tasks = new ArrayList<>();
+		tasks.add(todoTest);
 
-		when(taskRepo.findAll()).thenReturn(Collections.singletonList(todoTest));
+
+		when(taskRepo.findAllByUserId(1)).thenReturn(tasks);
+		when(uService.getCurrentUserId()).thenReturn(1L);
 		List<Task> todoList =taskService.getTasks();
 		Assertions.assertEquals(1,todoList.size());
 
 	}
 
-	@Test
+	/*@Test
 	public void testDeleteTask() throws Exception {
-		/*Task todoTest = new Task();
+		Task todoTest = new Task();
 		todoTest.setTaskTitle("test-name");
 		todoTest.setStatus(TaskStatus.TO_DO);
-		todoTest.setId(1L);
-		taskService.addTask(todoTest);
-
+		todoTest.setUserId(1);
+		todoTest.setId(1);
+		Task todoTest2 = new Task();
+		todoTest2.setTaskTitle("test-name 2");
+		todoTest2.setStatus(TaskStatus.TO_DO);
+		todoTest2.setUserId(2);
+		todoTest2.setId(2);
+		List<Task> tasks = new ArrayList<>();
+		tasks.add(todoTest);
+		List<Task> todoList =taskService.getTasks();
+		when(taskRepo.deleteById(1L)).thenReturn(taskRepo.deleteById(1L));
+		when(uService.getCurrentUserId()).thenReturn(1L);
 		taskService.deleteTask(1L);
-		Task taskToDelete = taskRepo.findById(1L).orElseThrow(() -> new Exception("Task not found with id : "+ todoTest.getId()));
+		verify(taskRepo, times(1)).deleteById(1L);
+	//	Task taskToDelete = taskRepo.findById(1L).orElseThrow(() -> new Exception("Task not found with id : "+ todoTest.getId()));
 
-		Assertions.assertEquals(null,taskToDelete);*/
-	}
+	//	Assertions.assertEquals(null,taskToDelete);
+	}*/
 
 	@Test
 	public void testGetAllLogs() {
