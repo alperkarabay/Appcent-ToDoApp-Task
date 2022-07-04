@@ -1,14 +1,15 @@
 todo:
- base-url: /task
- post-url: /newTask
- get-url: /getTasks
- put-url: /updateTask/{id}
- delete-url: /deleteTask/{id}
+ base-url: /api
+ post-url: /tasks
+ get-url: /tasks
+ put-url: /tasks/{id}
+ delete-url: /tasks/{id}
 user:
- base-url: /user
- post-url: /newUser
- validation-url: /validateUser
+ base-url: /api
+ post-url: /register
+ validation-url: /login
+ sign-out-url: /signOut
 log:
- base-url: /log
- get-url: /getLogs
+ base-url: /api
+ get-url: /logs
 

@@ -1,7 +1,8 @@
 create table TBL_TASKS(
  id INT AUTO_INCREMENT PRIMARY KEY,
  task_title VARCHAR(1000) NOT NULL,
- status VARCHAR(1000) NOT NULL
+ status VARCHAR(1000) NOT NULL,
+ user_id INT NOT NULL
 
 );
 
