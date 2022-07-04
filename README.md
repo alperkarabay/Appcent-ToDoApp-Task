@@ -1,5 +1,22 @@
 # Appcent-ToDoApp-Task
 This is a ToDoApp that is developed for AppCent Tech case study.
+****************************UPDATE 04.07.2022****************************
+USER-TASK RELATION IS ADDED. FROM NOW ON FOR USING THE SERVICES, FIRSTLY YOU MUST CREATE AN ACCOUNT WITH REGISTER ENDPOINT AND THEN YOU MUST LOGIN WITH LOGIN ENDPOINT
+THE APP IS DEPLOYED TO HEROKU
+LITTLE BUGS IN THE SERVICES ARE FIXED
+HEROKU ENDPOINTS:
+           GET - https://appcent-todo-task.herokuapp.com/api/tasks
+           POST- https://appcent-todo-task.herokuapp.com/api/tasks
+           PUT - https://appcent-todo-task.herokuapp.com/api/tasks/{id}
+           DELETE - https://appcent-todo-task.herokuapp.com/api/tasks/{id}
+           POST - https://appcent-todo-task.herokuapp.com/api/login
+           POST - https://appcent-todo-task.herokuapp.com/api/register
+           GET - https://appcent-todo-task.herokuapp.com/api/signOut
+           GET - https://appcent-todo-task.herokuapp.com/api/logs
+           SWAGGER: GET -http://localhost:8080/v3/api-docs/
+
+************************************************************************
+
 
 USED TECHNOLOGIES: JAVA 17, SPRING DATA, H2 DATABASE, REACT NATIVE, SPRING BOOT, JUNIT AND MOCKITO FOR UNIT TEST
 DATABASE ENTITIES: TASKS, LOGS, USERS, ROLES (ROLES AND USERS ARE DEFINED FOR AUTHENTICATION BUT COULDN'T IMPLEMENT YET)
