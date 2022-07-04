@@ -21,7 +21,7 @@ public class TaskServiceImpl implements TaskService{
     UserServiceImpl userService;
     @Override
     public List<Task> getTasks(){
-        List<Task> allTasks = taskRepository.findAllByUserId(Math.toIntExact(userService.getCurrentUserId()));
+        List<Task> allTasks = taskRepository.findAllByUserId(userService.getCurrentUserId());
         return allTasks;
     }
     @Override

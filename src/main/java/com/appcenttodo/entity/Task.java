@@ -31,7 +31,7 @@ public class Task implements Serializable {
     @NotNull
     private TaskStatus status;
     @NotNull
-    private int userId;
+    private long userId;
 
 
 
